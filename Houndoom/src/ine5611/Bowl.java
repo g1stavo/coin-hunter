@@ -48,10 +48,6 @@ public class Bowl {
     }
 
     public boolean isEmpty() {
-        if (coins == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return coins == 0;
     }
 }
