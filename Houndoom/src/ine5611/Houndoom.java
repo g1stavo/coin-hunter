@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Houndoom {
 
-    static ScheduledExecutorService lifeSaver;
+    protected static ScheduledExecutorService lifeSaver;
 
     public static void main(String[] args) {
         Forest forest = new Forest();
@@ -20,12 +20,12 @@ public class Houndoom {
         lifeSaver = Executors.newSingleThreadScheduledExecutor();
         lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 200, TimeUnit.MILLISECONDS);
 
-        Dog yellow1 = new Dog(ethan, forest, forest.getPote(1), "Ethan yellow dog");
-        Dog green1 = new Dog(ethan, forest, forest.getPote(1), "Ethan green dog");
-        Dog blue1 = new Dog(ethan, forest, forest.getPote(1), "Ethan blue dog");
-        Dog yellow2 = new Dog(brendan, forest, forest.getPote(1), "Brendan yellow dog");
-        Dog green2 = new Dog(brendan, forest, forest.getPote(1), "Brendan green dog");
-        Dog blue2 = new Dog(brendan, forest, forest.getPote(1), "Brendan blue dog");
+        Dog yellow1 = new Dog(ethan, forest, forest.getBowl(1), "Ethan yellow dog");
+        Dog green1 = new Dog(ethan, forest, forest.getBowl(1), "Ethan green dog");
+        Dog blue1 = new Dog(ethan, forest, forest.getBowl(1), "Ethan blue dog");
+        Dog yellow2 = new Dog(brendan, forest, forest.getBowl(1), "Brendan yellow dog");
+        Dog green2 = new Dog(brendan, forest, forest.getBowl(1), "Brendan green dog");
+        Dog blue2 = new Dog(brendan, forest, forest.getBowl(1), "Brendan blue dog");
 
         executor.execute(yellow1);
         executor.execute(yellow2);

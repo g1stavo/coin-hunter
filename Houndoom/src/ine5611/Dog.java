@@ -25,7 +25,7 @@ public class Dog extends Thread {
                 i += collected;
                 out.println(getName() + " is with " + i + " coins.");
                 int caminho = bowl.getWay();
-                bowl = forest.getPote(caminho);
+                bowl = forest.getBowl(caminho);
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 out.println("Unexpected error!");
