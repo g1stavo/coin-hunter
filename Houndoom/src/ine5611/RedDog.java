@@ -17,10 +17,16 @@ public class RedDog extends Thread {
             for (int i = 1; i <= 20; i++) {
                 bowl = forest.getPote(i);
                 if (bowl.isEmpty()) {
-                    bowl.putCoin();
+                    putCoin();
                 }
             }
         }
         out.println(getName() + " done.");
+    }
+    
+    public synchronized void putCoin() {
+        bowl.setCoins(1);
+        System.out.println("A red dog put one coin into bowl " + bowl.getBowlNumber() + ".");
+        notifyAll();
     }
 }

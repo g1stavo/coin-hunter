@@ -21,7 +21,7 @@ public class Dog extends Thread {
     public void run() {
         while (i < 20 && hunter.getCoins() + i < 50 && running) {
             try {
-                int collected = bowl.takeCoin(i);
+                int collected = takeCoin(i);
                 i += collected;
                 out.println(getName() + " is with " + i + " coins.");
                 int caminho = bowl.getWay();
@@ -37,5 +37,25 @@ public class Dog extends Thread {
             i = 0;
         }
         out.println(getName() + " done.");
+    }
+
+    public synchronized int takeCoin(int actualCoins) throws InterruptedException {
+        int collected = 0;
+
+        while (bowl.getCoins() == 0) {
+            try {
+                sleep(6000);
+            } catch (InterruptedException e) {
+                out.println("Unexpected error!");
+            }
+        }
+
+        while (collected < 3 && actualCoins < 20 && bowl.getCoins() > 0) {
+            bowl.setCoins(bowl.getCoins() - 1);
+            collected++;
+            actualCoins++;
+        }
+
+        return collected;
     }
 }

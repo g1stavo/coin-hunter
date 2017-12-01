@@ -18,7 +18,7 @@ public class Houndoom {
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         lifeSaver = Executors.newSingleThreadScheduledExecutor();
-        lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 500, TimeUnit.MILLISECONDS);
+        lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 200, TimeUnit.MILLISECONDS);
 
         Dog yellow1 = new Dog(ethan, forest, forest.getPote(1), "Ethan yellow dog");
         Dog green1 = new Dog(ethan, forest, forest.getPote(1), "Ethan green dog");

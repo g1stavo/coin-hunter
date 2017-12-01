@@ -14,34 +14,6 @@ public class Bowl {
         this.bowlNumber = bowlNumber;
     }
 
-    public synchronized void putCoin() {
-        coins = 1;
-        System.out.println("A red dog put one coin into bowl " + bowlNumber + ".");
-        notifyAll();
-    }
-
-    public synchronized int takeCoin(int actualCoins) throws InterruptedException {
-        int collected = 0;
-
-        while (coins == 0) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                out.println("Unexpected error!");
-            }
-        }
-        
-        while (collected < 3 && actualCoins < 20 && coins > 0) {
-            coins--;
-            collected++;
-            actualCoins++;
-        }
-        
-        Thread.sleep(100);
-        notifyAll();
-        return collected;
-    }
-
     public int getWay() {
         Random random = new Random();
         return way[random.nextInt(way.length)];
@@ -50,4 +22,17 @@ public class Bowl {
     public boolean isEmpty() {
         return coins == 0;
     }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
+    }
+
+    public int getBowlNumber() {
+        return bowlNumber;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
 }
