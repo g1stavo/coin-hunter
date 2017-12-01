@@ -12,33 +12,28 @@ public class Houndoom {
     public static void main(String[] args) {
         Forest forest = new Forest();
 
-        Hunter yellowHunter = new Hunter("Yellow");
-        Hunter greenHunter = new Hunter("Green");
-        Hunter blueHunter = new Hunter("Blue");
+        Hunter ethan = new Hunter("Ethan");
+        Hunter brendan = new Hunter("Brendan");
 
-        ExecutorService yellowExecutor = Executors.newFixedThreadPool(1);
-        ExecutorService greenExecutor = Executors.newFixedThreadPool(1);
-        ExecutorService blueExecutor = Executors.newFixedThreadPool(1);
+        ExecutorService ethanExecutor = Executors.newFixedThreadPool(1);
+        ExecutorService brendanExecutor = Executors.newFixedThreadPool(1);
 
         lifeSaver = Executors.newSingleThreadScheduledExecutor();
         lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 200, TimeUnit.MILLISECONDS);
 
-        Dog yellow1 = new Dog(yellowHunter, forest, forest.getPote(1), "Yellow dog 1");
-        Dog green1 = new Dog(greenHunter, forest, forest.getPote(1), "Green dog 1");
-        Dog blue1 = new Dog(blueHunter, forest, forest.getPote(1), "Blue dog 1");
-        Dog yellow2 = new Dog(yellowHunter, forest, forest.getPote(1), "Yellow dog 2");
-        Dog green2 = new Dog(greenHunter, forest, forest.getPote(1), "Green dog 2");
-        Dog blue2 = new Dog(blueHunter, forest, forest.getPote(1), "Blue dog 2");
+        Dog yellow1 = new Dog(ethan, forest, forest.getPote(1), "Ethan yellow dog");
+        Dog green1 = new Dog(ethan, forest, forest.getPote(1), "Ethan green dog");
+        Dog blue1 = new Dog(ethan, forest, forest.getPote(1), "Ethan blue dog");
+        Dog yellow2 = new Dog(brendan, forest, forest.getPote(1), "Brendan yellow dog");
+        Dog green2 = new Dog(brendan, forest, forest.getPote(1), "Brendan green dog");
+        Dog blue2 = new Dog(brendan, forest, forest.getPote(1), "Brendan blue dog");
 
-        yellowExecutor.execute(yellow1);
-        greenExecutor.execute(green1);
-        blueExecutor.execute(blue1);
-        yellowExecutor.execute(yellow2);
-        greenExecutor.execute(green2);
-        blueExecutor.execute(blue2);
-        yellowExecutor.execute(yellow1);
-        greenExecutor.execute(green1);
-        blueExecutor.execute(blue1);
+        ethanExecutor.execute(yellow1);
+        brendanExecutor.execute(yellow2);
+        ethanExecutor.execute(green1);
+        brendanExecutor.execute(green2);
+        ethanExecutor.execute(blue1);
+        brendanExecutor.execute(blue2);
 
         lifeSaver.shutdown();
     }

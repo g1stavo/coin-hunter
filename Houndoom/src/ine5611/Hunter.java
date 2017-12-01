@@ -19,19 +19,15 @@ public class Hunter {
         return winner;
     }
 
-    public void setWinner() {
-        winner = true;
-        Dog.running = false;
-        out.println("Hunter " + name + " won.");
-        exit(0);
-    }
-
     public void setCoins(int amount) {
         coins += amount;
         if (coins >= 50) {
-            setWinner();
+            winner = true;
+            Dog.running = false;
+            out.println("Hunter " + name + " won.");
+            exit(0);
         }
-        System.out.println("Hunter " + name + " is with " + coins + " coins.");
+        out.println("Hunter " + name + " is with " + coins + " coins.");
     }
 
     public int getCoins() {

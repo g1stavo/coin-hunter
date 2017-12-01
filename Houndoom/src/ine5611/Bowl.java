@@ -15,7 +15,7 @@ public class Bowl {
 
     public synchronized void putCoin() {
         coins = 1;
-        System.out.println("Put one coin into bowl " + bowlNumber);
+        System.out.println("Put one coin into bowl " + bowlNumber + ".");
         notifyAll();
     }
 
