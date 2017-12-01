@@ -1,5 +1,6 @@
 package ine5611;
 
+import static java.lang.System.out;
 import java.util.Random;
 
 public class Bowl {
@@ -26,12 +27,15 @@ public class Bowl {
             try {
                 wait();
             } catch (InterruptedException e) {
+                out.println("Unexpected error!");
             }
         }
+        
         while (collected < 3 && coins > 0) {
             coins--;
             collected++;
         }
+        
         Thread.sleep(100);
         notifyAll();
         return collected;
@@ -39,9 +43,7 @@ public class Bowl {
 
     public int getWay() {
         Random random = new Random();
-        int position = random.nextInt(way.length);
-        int bowlNumber = way[position];
-        return bowlNumber;
+        return way[random.nextInt(way.length)];
     }
 
     public boolean isEmpty() {

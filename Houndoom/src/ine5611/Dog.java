@@ -29,6 +29,7 @@ public class Dog extends Thread {
                 Thread.sleep(100);
                 out.println(getName() + " entered bowl " + caminho + ".");
             } catch (InterruptedException e) {
+                out.println("Unexpected error!");
             }
         }
         if (!hunter.getWinner()) {
