@@ -15,11 +15,10 @@ public class Houndoom {
         Hunter ethan = new Hunter("Ethan");
         Hunter brendan = new Hunter("Brendan");
 
-        ExecutorService ethanExecutor = Executors.newFixedThreadPool(1);
-        ExecutorService brendanExecutor = Executors.newFixedThreadPool(1);
+        ExecutorService executor = Executors.newFixedThreadPool(3);
 
         lifeSaver = Executors.newSingleThreadScheduledExecutor();
-        lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 200, TimeUnit.MILLISECONDS);
+        lifeSaver.scheduleAtFixedRate(new RedDog(forest), 0, 500, TimeUnit.MILLISECONDS);
 
         Dog yellow1 = new Dog(ethan, forest, forest.getPote(1), "Ethan yellow dog");
         Dog green1 = new Dog(ethan, forest, forest.getPote(1), "Ethan green dog");
@@ -28,12 +27,12 @@ public class Houndoom {
         Dog green2 = new Dog(brendan, forest, forest.getPote(1), "Brendan green dog");
         Dog blue2 = new Dog(brendan, forest, forest.getPote(1), "Brendan blue dog");
 
-        ethanExecutor.execute(yellow1);
-        brendanExecutor.execute(yellow2);
-        ethanExecutor.execute(green1);
-        brendanExecutor.execute(green2);
-        ethanExecutor.execute(blue1);
-        brendanExecutor.execute(blue2);
+        executor.execute(yellow1);
+        executor.execute(yellow2);
+        executor.execute(green1);
+        executor.execute(green2);
+        executor.execute(blue1);
+        executor.execute(blue2);
 
         lifeSaver.shutdown();
     }

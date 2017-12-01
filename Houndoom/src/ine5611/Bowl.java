@@ -16,11 +16,11 @@ public class Bowl {
 
     public synchronized void putCoin() {
         coins = 1;
-        System.out.println("Put one coin into bowl " + bowlNumber + ".");
+        System.out.println("A red dog put one coin into bowl " + bowlNumber + ".");
         notifyAll();
     }
 
-    public synchronized int takeCoin() throws InterruptedException {
+    public synchronized int takeCoin(int actualCoins) throws InterruptedException {
         int collected = 0;
 
         while (coins == 0) {
@@ -31,9 +31,10 @@ public class Bowl {
             }
         }
         
-        while (collected < 3 && coins > 0) {
+        while (collected < 3 && actualCoins < 20 && coins > 0) {
             coins--;
             collected++;
+            actualCoins++;
         }
         
         Thread.sleep(100);

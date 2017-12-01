@@ -21,13 +21,12 @@ public class Dog extends Thread {
     public void run() {
         while (i < 20 && hunter.getCoins() + i < 50 && running) {
             try {
-                int collected = bowl.takeCoin();
+                int collected = bowl.takeCoin(i);
                 i += collected;
                 out.println(getName() + " is with " + i + " coins.");
                 int caminho = bowl.getWay();
                 bowl = forest.getPote(caminho);
                 Thread.sleep(100);
-                out.println(getName() + " entered bowl " + caminho + ".");
             } catch (InterruptedException e) {
                 out.println("Unexpected error!");
             }
