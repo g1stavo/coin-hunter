@@ -6,4 +6,4 @@ Houndoom
 Why?
 =============
 
-This was our second and final project for the Operational System class at my university. We fixed Threads, mutual exclusion and process scheduling concepts by a simulation of coin hunter dogs competition.
+This was our second and final project for the Operational System class at my university. We fixed Threads, mutual exclusion and process scheduling concepts by developing a simulation of coin hunter dogs competition.
