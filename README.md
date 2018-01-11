@@ -1,7 +1,7 @@
 Houndoom
 ====================
 
-<img src=//cdn.bulbagarden.net/upload/thumb/5/51/229Houndoom.png/250px-229Houndoom.png>
+<img src=https://cdn.bulbagarden.net/upload/thumb/5/51/229Houndoom.png/250px-229Houndoom.png>
 
 Why?
 =============
