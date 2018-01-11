@@ -1,6 +1,9 @@
 Houndoom
 ====================
 
-Operational Systems final job.
+<img src=//cdn.bulbagarden.net/upload/thumb/5/51/229Houndoom.png/250px-229Houndoom.png>
 
-<img src="http://static.pokemonpets.com/images/monsters-images-800-800/2229-Shiny-Houndoom.png">
+Why?
+=============
+
+This was our second and final project for the Operational System class at my university. We fixed Threads, mutual exclusion and process scheduling concepts by a simulation of coin hunter dogs competition.
