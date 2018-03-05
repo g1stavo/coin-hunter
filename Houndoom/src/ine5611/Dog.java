@@ -39,8 +39,9 @@ public class Dog extends Thread {
         out.println(getName() + " done.");
     }
 
-    public synchronized int takeCoin(int actualCoins) throws InterruptedException {
+    public synchronized int takeCoin(int coins) throws InterruptedException {
         int collected = 0;
+        int actualCoins = coins;
 
         while (bowl.getCoins() == 0) {
             try {
