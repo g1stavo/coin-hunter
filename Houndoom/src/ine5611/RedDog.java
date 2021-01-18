@@ -3,7 +3,6 @@ package ine5611;
 import static java.lang.System.out;
 
 public class RedDog extends Thread {
-
     protected Bowl bowl;
     protected Forest forest;
 

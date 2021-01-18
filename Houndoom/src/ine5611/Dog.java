@@ -3,7 +3,6 @@ package ine5611;
 import static java.lang.System.out;
 
 public class Dog extends Thread {
-
     protected int i = 0;
     protected Bowl bowl;
     protected Forest forest;
@@ -21,21 +20,21 @@ public class Dog extends Thread {
     public void run() {
         while (i < 20 && hunter.getCoins() + i < 50 && running) {
             try {
-                int collected = takeCoin(i);
-                i += collected;
+                i += takeCoin(i);
                 out.println(getName() + " is with " + i + " coins.");
-                int caminho = bowl.getWay();
-                bowl = forest.getBowl(caminho);
+                bowl = forest.getBowl(bowl.getWay(););
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 out.println("Unexpected error!");
             }
         }
+
         if (!hunter.getWinner()) {
             out.println(getName() + " got " + i + " coins. Going to give to its owner.");
             hunter.setCoins(i);
             i = 0;
         }
+        
         out.println(getName() + " done.");
     }
 

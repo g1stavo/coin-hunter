@@ -6,7 +6,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Houndoom {
-
     protected static ScheduledExecutorService lifeSaver;
 
     public static void main(String[] args) {

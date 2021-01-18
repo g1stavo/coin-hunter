@@ -4,7 +4,6 @@ import static java.lang.System.exit;
 import static java.lang.System.out;
 
 public class Hunter {
-
     protected int coins;
     protected boolean winner;
     protected String name;

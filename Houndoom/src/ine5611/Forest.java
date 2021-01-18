@@ -1,7 +1,6 @@
 package ine5611;
 
 public class Forest {
-
     protected Bowl[] bowls;    
     protected static int[][] ways = {
         {2, 15}, {1, 3, 4, 5}, {2, 9}, {2, 9, 10}, {2, 6}, {7, 8}, {6}, {6},
@@ -11,7 +10,6 @@ public class Forest {
 
     public Forest() {
         bowls = new Bowl[20];
-        
         for (int i = 0; i < 20; i++) {
             bowls[i] = new Bowl(ways[i], i + 1);
         }

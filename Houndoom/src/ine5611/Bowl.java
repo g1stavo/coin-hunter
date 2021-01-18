@@ -3,7 +3,6 @@ package ine5611;
 import java.util.Random;
 
 public class Bowl {
-
     protected int bowlNumber;
     protected int coins = 4;
     protected int[] way;
@@ -33,5 +32,4 @@ public class Bowl {
     public int getCoins() {
         return coins;
     }
-
 }
